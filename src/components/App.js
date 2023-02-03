@@ -102,7 +102,7 @@ class App extends Component {
 
 
         // =========== contract address ===========
-        const ethSwapWebSocket = await new web3Socket.eth.Contract(EthSwap, "0x821467681F1081Af6ebB5a8a309b31fFe18de0D9")
+        const ethSwapWebSocket = await new web3Socket.eth.Contract(EthSwap, "0x8637A5346C899B61C8E22d0D0663c272834efb65")
         this.setState({ ethSwapWebSocket })
 
 
@@ -132,7 +132,7 @@ class App extends Component {
     const networkId =  await web3.eth.net.getId()
     // const tokenData = Token.networks[networkId]
     // if(tokenData) {
-      const token = new web3.eth.Contract(Token, "0x963d740615F6526d655d2Fd1e38ee8934e4fC22F")
+      const token = new web3.eth.Contract(Token, "0xf250a59723cfb438645772203BA262E52DE5Cd13")
       this.setState({ token })
       let tokenBalance = await token.methods.balanceOf(this.state.account).call()
       this.setState({ tokenBalance: tokenBalance.toString() })
@@ -147,10 +147,10 @@ class App extends Component {
     // Load EthSwap
     // const ethSwapData = await EthSwap.networks[networkId]
     // if(ethSwapData) {
-      const ethSwap = new web3.eth.Contract(EthSwap, "0x821467681F1081Af6ebB5a8a309b31fFe18de0D9")
+      const ethSwap = new web3.eth.Contract(EthSwap, "0x8637A5346C899B61C8E22d0D0663c272834efb65")
       this.setState({ ethSwap })
 
-      const tokenPrice = new web3.eth.Contract(TokenPrice, "0x789e4aadAd94fE96397f74153D63aB7bbD2B7Fcc")
+      const tokenPrice = new web3.eth.Contract(TokenPrice, "0x80e9cEc3d7e4113cb7F074d1AdB2B2dd692D0DF8")
       this.setState({ tokenPrice })
       console.log('ethSwap.options.address:' + this.state.ethSwap.options.address)    
       console.log('tokenPrice.options.address:' + this.state.tokenPrice.options.address)    
